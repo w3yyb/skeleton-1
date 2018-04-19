@@ -1,164 +1,183 @@
-# pds/skeleton
+ 
+pds/skeleton
+------------
 
-This publication describes a standard filesystem skeleton suitable for all PHP
-packages.
+> 项目地址：[https://github.com/php-pds/skeleton](https://github.com/php-pds/skeleton)
 
-Please see <https://github.com/php-pds/skeleton_research> for background
-information.
+本文描述了所有适用于 PHP 包的标准文件系统框架。
 
-Command-line tools for `validating` or `generating` PDS conform packages which are included with this standard are documented [here](./docs/tools.md).
+请查阅 [https://github.com/php-pds/skeleton_research](https://github.com/php-pds/skeleton_research) 获取背景资料。
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this publication are to be
-interpreted as described in [RFC 2119](http://tools.ietf.org/html/rfc2119).
+用于 `验证` 或 `生成` 符合 PDS 标准包的命令行工具说明 [在此](./docs/tools.md)。
 
-## Summary
+关键词 "必须"，"一定不可"，"需要"，"将要"， "将不"，"应该"，  
+"不该"，"推荐"，"可以"，和 "可选" 在本文中描述语义遵循 [RFC 2119](http://tools.ietf.org/html/rfc2119) 标准。
+ 
 
-A package MUST use these names for these root-level directories:
+概览
+--
 
-| If a package has a root-level directory for ... | ... then it MUST be named: |
-| ----------------------------------------------- | -------------------------- |
-| command-line executables                        | `bin/`                     |
-| configuration files                             | `config/`                  |
-| documentation files                             | `docs/`                    |
-| web server files                                | `public/`                  |
-| other resource files                            | `resources/`               |
-| PHP source code                                 | `src/`                     |
-| test code                                       | `tests/`                   |
+一个包在根级别下的目录**必须**使用如下名称：
 
-A package MUST use these names for these root-level files:
+如果一个包中含有根级别的目录 ...
 
-| If a package has a root-level file for ...      | ... then it MUST be named: |
-| ----------------------------------------------- | -------------------------- |
-| a log of changes between releases               | `CHANGELOG(.*)`            |
-| guidelines for contributors                     | `CONTRIBUTING(.*)`         |
-| licensing information                           | `LICENSE(.*)`              |
-| information about the package itself            | `README(.*)`               |
+... 那么它们**必须**命名如此：
 
-A package SHOULD include a root-level file indicating the licensing and
-copyright terms of the package contents.
+命令行可执行文件
 
-## Root-Level Directories
+`bin/`
+
+配置文件
+
+`config/`
+
+文档
+
+`docs/`
+
+web服务器文件
+
+`public/`
+
+其他资源文件
+
+`resources/`
+
+PHP 源码
+
+`src/`
+
+测试代码
+
+`tests/`
+
+一个包在根级别下的文件**必须**使用如下名称：
+
+如果一个包中含有根级别的文件...
+
+... 那么它们**必须**命名如此：
+
+发布版本间的更新日志
+
+`CHANGELOG(.*)`
+
+参与者指南
+
+`CONTRIBUTING(.*)`
+
+证书许可
+
+`LICENSE(.*)`
+
+包简介
+
+`README(.*)`
+
+一个包**应该**包含一个根级文件，表明许可和  
+包内容的版权条款。
+ 
+
+根级目录
+----
 
 ### bin/
 
-If the package provides a root-level directory for command-line executable
-files, it MUST be named `bin/`.
+如果一个包提供一个根级目录用来存放命令行可执行文件，则它**必须**被命名为 `bin/`。
 
-This publication does not otherwise define the structure and contents of the
-directory.
+本文将不再另外定义该结构和内容目录。
 
 ### config/
 
-If the package provides a root-level directory for configuration files, it MUST
-be named `config/`.
+如果一个包提供一个根级目录用来存放配置文件，则它**必须**被命名为 `config/`。
 
-This publication does not otherwise define the structure and contents of the
-directory.
+本文将不再另外定义该结构和内容目录。
 
 ### docs/
 
-If the package provides a root-level directory for documentation files, it MUST
-be named `docs/`.
+如果一个包提供一个根级目录用来存放文档，则它**必须**被命名为 `docs/`。
 
-This publication does not otherwise define the structure and contents of the
-directory.
+本文将不再另外定义该结构和内容目录。
+ 
 
 ### public/
 
-If the package provides a root-level directory for web server files, it MUST be
-named `public/`.
+如果一个包提供一个根级目录用来存放 web 服务器文件，则它**必须**被命名为 `public/`。
 
-This publication does not otherwise define the structure and contents of the
-directory.
+本文将不再另外定义该结构和内容目录。
 
-> N.b.: This directory MAY be intended as a web server document root.
-> Alternatively, it MAY be that the files will be served dynamically via other
-> code, copied or symlinked to the "real" document root, or otherwise managed so
-> that they become publicly available on the web.
+> 注： 这个目录可以作为 web 服务器文档的根目录。  
+> 另一种方式，这些文件**可以**被其他代码动态提供，  
+> 复制或者创建符号链接到「真正」的文档根目录，  
+> 或以其他方式管理，以便它们在网上流通。
 
 ### resources/
 
-If the package provides a root-level directory for other resource files, it MUST
-be named `resources/`.
+如果一个包提供一个根级目录用来存放其他资源文件文件，则它**必须**被命名为 `resources/`。
 
-This publication does not otherwise define the structure and contents of the
-directory.
+本文将不再另外定义该结构和内容目录。
+ 
 
 ### src/
 
-If the package provides a root-level directory for PHP source code files, it
-MUST be named `src/`.
+如果包为 PHP 源代码提供了一个根目录， 则必须被命名为 `src/`.
 
-This publication does not otherwise define the structure and contents of the
-directory.
+此发布版本不额外定义结构和目录内容。
 
 ### tests/
 
-If the package provides a root-level directory for test files, it MUST be named
-`tests/`.
+如果包为测试文件提供了一个跟目录，则必须被命名为 `tests/`.
 
-This publication does not otherwise define the structure and contents of the
-directory.
+此发布版本不额外定义结构和目录内容。
+ 
 
-### Other Directories
+### 其他文件夹
 
-The package MAY contain other root-level directories for purposes not described
-by this publication.
+包还**可以**包含其他本文未涉及的根级目录。
 
-This publication does not define the structure and contents of the other
-root-level directories.
+本文将不再另外定义该结构和内容目录。
 
-## Root-Level Files
+根级文件
+----
 
-### CHANGELOG
+### 更新日志
 
-If the package provides a root-level file with a list of changes since the last
-release or version, it MUST be named `CHANGELOG`.
+如果包提供一个根级文件用于描述上个发布版本以来的更新列表，则该文件必须被命名为 `CHANGELOG`。
 
-It MAY have a lowercase filename extension indicating the file format.
+它**可以**有一个小写的文件扩展名。
 
-This publication does not otherwise define the structure and contents of the
-file.
+本文将不再另外定义该结构和内容目录。
+ 
 
-### CONTRIBUTING
+### 参与贡献
 
-If the package provides a root-level file that describes how to contribute to
-the package, it MUST be named `CONTRIBUTING`.
+如果一个包提供一个根级文件用来描述如何向它贡献代码，则该文件必须被命名为 `CONTRIBUTING`。
 
-It MAY have a lowercase filename extension indicating the file format.
+它**可以**有一个小写的文件扩展名。
 
-This publication does not otherwise define the structure and contents of the
-file.
+本文将不再另外定义该结构和内容目录。
 
-### LICENSE
+### 证书
 
-Whereas package consumers might be in violation of copyright law when copying
-unlicensed intellectual property, the package SHOULD include a root-level file
-indicating the licensing and copyright terms of the package contents.
+在拷贝当前包代码时，使用者可能会违反版权法中未经许可的知识产权条款， 当前包**应该**包含一个根级文件用以表明包裹内容的许可和版权条款。
 
-If the package provides a root-level file indicating the licensing and copyright
-terms of the package contents, it MUST be named `LICENSE`.
+如果一个包提供一个根级文件用以表示许可和版权条款，则该文件必须被命名为`LICENSE`。
 
-It MAY have a lowercase filename extension indicating the file format.
+它**可以**有一个小写的文件扩展名。
 
-This publication does not otherwise define the structure and contents of the
-file.
+本文将不再另外定义该结构和内容目录。
+ 
 
-### README
+### README 文件
 
-If the package provides a root-level file with information about the package
-itself, it MUST be named `README`.
+如果包提供一个关于他自身信息的根级文件，则必须被命名为 `README`。
 
-It MAY have a lowercase filename extension indicating the file format.
+他可能有一个小写的文件扩展名代表文件格式。
 
-This publication does not otherwise define the structure and contents of the
-file.
+此发行版不额外定义结构和目录内容。
 
-### Other Files
+### 其他文件
 
-The package MAY contain other root-level files for purposes not described in
-this publication.
+包中可能包含其他根级文件来说明未在发行版中描述的目的。
 
-This publication does not define the structure and contents of the other
-root-level files.
+此发行版不去定义结构和其他根级文件的内容。
+   
